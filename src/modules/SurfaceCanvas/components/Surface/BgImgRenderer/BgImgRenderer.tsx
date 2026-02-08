@@ -1,5 +1,5 @@
 import { useBgImgUrl } from "@/app/store/selectors";
-import imgbg from "@/shared/assets/img/bg.webp";
+import imgbg from "@/shared/assets/img/bgimg.webp";
 import { MAX_SURFACE_WIDTH } from "@/shared/constants";
 
 interface BgImgRendererProps {

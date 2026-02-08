@@ -6,6 +6,10 @@ An interactive configuration tool designed for the precise positioning and layou
 
 This project is a technical demonstration. Originally developed as a specific test assignment, it has been refactored into an abstract planning tool to demonstrate architectural patterns, complex SVG interactions, and state management while preserving confidentiality.
 
+## Live Demo
+
+You can try the live application here: **[\[ Live Demo \]](http://phmshk.github.io/panel_studio/)**
+
 ## Project Overview
 
 Panel Studio allows users to define surface dimensions, apply textures, and arrange panels within a grid system. It solves complex UI challenges such as coordinate mapping between the DOM and SVG, collision detection, and state persistence.

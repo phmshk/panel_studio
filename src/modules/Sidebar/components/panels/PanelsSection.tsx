@@ -89,7 +89,7 @@ export const PanelsSection = () => {
             </h3>
             <p className="text-sm leading-relaxed opacity-90">
               Surface area is insufficient for module placement. Minimum
-              required dimensions are 40x40cm. Please adjust the surface size.
+              required dimensions are 45x45cm. Please adjust the surface size.
             </p>
           </div>
         </div>

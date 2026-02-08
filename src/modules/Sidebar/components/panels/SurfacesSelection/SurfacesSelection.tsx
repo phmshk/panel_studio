@@ -94,8 +94,8 @@ export const SurfacesSelection = (props: SurfacesSelectionProps) => {
                   )}
                   style={{
                     aspectRatio: `${surface.width} / ${surface.height}`,
-                    width: "40%",
-                    maxHeight: "80%",
+                    width: surface.width >= surface.height ? "60%" : "auto",
+                    height: surface.width >= surface.height ? "auto" : "60%",
                   }}
                 />
               </div>
@@ -110,7 +110,7 @@ export const SurfacesSelection = (props: SurfacesSelectionProps) => {
                   Zone {index + 1}
                 </span>
                 <span className="text-muted-foreground/60 text-[10px] leading-tight">
-                  {surface.width} × {surface.height}m
+                  {surface.width} × {surface.height}cm
                 </span>
               </div>
 

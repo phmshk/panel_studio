@@ -1,32 +1,35 @@
 # Panel Studio (Technical Demo)
 
-An interactive configuration tool designed for the precise positioning and layout of modular panels on defined surfaces.
+An interactive tool for configuring and arranging modular elements on 2D surfaces.
 
 ## Context
 
-This project is a technical demonstration. Originally developed as a specific test assignment, it has been refactored into an abstract planning tool to demonstrate architectural patterns, complex SVG interactions, and state management while preserving confidentiality.
+This project is a reworked version of a technical assignment I completed for a Junior Frontend Developer position.
+
+I decided to refactor the original task into an abstract planning tool. My goal was to remove any specific business logic or design belonging to the company and focus purely on the engineering challenges. This allows me to demonstrate my skills in architecture, state management, and complex UI interactions in a neutral environment.
+
+### What are we placing? ###
+In this demo, the draggable elements represent abstract mounts (size 5x5 cm). 
+
+### Where are we placing them? ###
+We are placing them on a custom configurable surface, similar to a display panel you might find in a shop. The goal was to completely decouple the tool from its original context to focus on the abstract technical implementation.
+
+This application is a small CAD-like tool that handles geometry, coordinate systems, and collision detection in the browser.
 
 ## Live Demo
 
 You can try the live application here: **[\[ Live Demo \]](http://phmshk.github.io/panel_studio/)**
 
-## Project Overview
+## Technical Challenges
 
-Panel Studio allows users to define surface dimensions, apply textures, and arrange panels within a grid system. It solves complex UI challenges such as coordinate mapping between the DOM and SVG, collision detection, and state persistence.
+Building this tool required solving several interesting problems beyond standard web development:
 
-## Key Features
-
-### Core Mechanics
-
-- **SVG Coordinate System**: Implements bidirectional mapping between DOM pixels and SVG units to handle zooming and scaling correctly across different device sizes.
-- **Custom Drag & Drop**: Built from scratch using the Pointer Events API and `setPointerCapture` to ensure stability and touch support without relying on heavy third-party drag-and-drop libraries.
-- **Collision Detection**: A custom algorithm prevents panels from overlapping or being placed outside the surface boundaries in real-time.
-
-### Smart Logic
-
-- **Auto-placement**: An intelligent positioning system that automatically finds the nearest available slot for new panel groups.
-- **Smart Tiling**: Automatically detects when a surface area exceeds the uploaded texture dimensions and generates a seamless pattern to maintain visual fidelity.
-- **State Persistence**: Uses local storage synchronization to save the user's progress, including layout configuration and onboarding status.
+1. **SVG Coordinate System**: The application uses SVG for rendering to ensure perfect scaling between internal browser units and real-world centimeters. A major challenge was synchronizing the mouse position (screen pixels) with the internal SVG coordinate system. I wrote utilities to handle this translation so that drag-and-drop works accurately at any zoom level or screen size.
+2. **Custom Drag & Drop**: Instead of using heavy external libraries, I built the drag-and-drop logic from scratch using the Pointer Events API. This gives me full control over the performance and ensures the app works smoothly on both mouse-based computers and touch-screen devices.
+3. **Logic and Validation**: The app prevents users from making mistakes. It includes:
+   - **Collision Detection**: Panels cannot be placed on top of each other.
+   - **Boundary Checks**: Panels cannot be placed outside the surface area.
+   - **Auto-placement**: If a user adds a panel without dragging it, the app automatically calculates the next available free space in the grid.
 
 ## Tech Stack
 
@@ -45,8 +48,8 @@ Panel Studio allows users to define surface dimensions, apply textures, and arra
 **Styling & UI**
 
 - Tailwind CSS
-- shadcn/ui (Radix UI primitives)
-- Lucide React (Iconography)
+- shadcn/ui 
+- Lucide React
 
 ## Run locally
 

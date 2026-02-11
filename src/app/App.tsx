@@ -37,7 +37,7 @@ function App() {
         </div>
       </aside>
 
-      <section className="bg-secondary/30 order-1 flex min-h-[50vh] flex-col p-4 lg:order-2 lg:h-full lg:flex-1 lg:p-6">
+      <section className="bg-secondary/30 order-1 flex h-screen min-h-[50vh] flex-col lg:order-2 lg:h-full lg:flex-1 lg:p-6">
         <div className="border-border/50 bg-background relative flex h-full w-full flex-1 items-center justify-center overflow-hidden rounded-3xl border shadow-sm transition-all">
           <SurfaceCanvas />
         </div>

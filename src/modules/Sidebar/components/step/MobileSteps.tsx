@@ -1,5 +1,5 @@
 import { Button } from "@/shared/components/ui/button";
-import { ArrowRight, ChevronLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { cn } from "@/shared/utils";
 
 interface MobileStepsProps {
@@ -36,7 +36,7 @@ export const MobileSteps = (props: MobileStepsProps) => {
             !canPrev && "invisible",
           )}
         >
-          <ChevronLeft className="h-4 w-4" />
+          <ArrowLeft className="h-4 w-4" />
           Back
         </Button>
 
